@@ -46,13 +46,22 @@ function findStringInSnakingPuzzle(puzzle, searchStr) {
     function IsHere(puzzle, word, curLetterNum, curPos) {
         if (curLetterNum === word.length - 1) {
             return (puzzle[curPos[0]][curPos[1]] === word[curLetterNum]) && (!IsInPosArr(wasInRow, [curPos[0], curPos[1]]));
-        } if ((puzzle[curPos[0]][curPos[1]] === word[curLetterNum]) && (!IsInPosArr(wasInRow, [curPos[0], curPos[1]]))) {
+        }
+        if ((puzzle[curPos[0]][curPos[1]] === word[curLetterNum]) && (!IsInPosArr(wasInRow, [curPos[0], curPos[1]]))) {
             let ret = false;
             wasInRow.push([curPos[0], curPos[1]]);
-            if (curPos[0] > 0) { ret = ret || IsHere(puzzle, word, curLetterNum + 1, [curPos[0] - 1, curPos[1]]); }
-            if (curPos[1] < puzzle[curPos[0]].length - 1) { ret = ret || IsHere(puzzle, word, curLetterNum + 1, [curPos[0], curPos[1] + 1]); }
-            if (curPos[0] < puzzle.length - 1) { ret = ret || IsHere(puzzle, word, curLetterNum + 1, [curPos[0] + 1, curPos[1]]); }
-            if (curPos[1] > 0) { ret = ret || IsHere(puzzle, word, curLetterNum + 1, [curPos[0], curPos[1] - 1]); }
+            if (curPos[0] > 0) {
+                ret = ret || IsHere(puzzle, word, curLetterNum + 1, [curPos[0] - 1, curPos[1]]);
+            }
+            if (curPos[1] < puzzle[curPos[0]].length - 1) {
+                ret = ret || IsHere(puzzle, word, curLetterNum + 1, [curPos[0], curPos[1] + 1]);
+            }
+            if (curPos[0] < puzzle.length - 1) {
+                ret = ret || IsHere(puzzle, word, curLetterNum + 1, [curPos[0] + 1, curPos[1]]);
+            }
+            if (curPos[1] > 0) {
+                ret = ret || IsHere(puzzle, word, curLetterNum + 1, [curPos[0], curPos[1] - 1]);
+            }
             wasInRow.pop();
             return ret;
         }
@@ -155,7 +164,9 @@ UrlShortener.prototype = {
 
     encode(url) {
         let result = String();
-        let char1; let char2; let
+        let char1;
+        let char2;
+        let
             newChar;
         for (let i = 0; i + 1 < url.length; i += 2) {
             char1 = url.charCodeAt(i);
@@ -171,7 +182,9 @@ UrlShortener.prototype = {
 
     decode(code) {
         let result = String();
-        let char1; let char2; let
+        let char1;
+        let char2;
+        let
             oldChar;
         for (let i = 0; i < code.length; i++) {
             oldChar = code.charCodeAt(i);

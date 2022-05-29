@@ -167,6 +167,7 @@ function IsStraight(cards) {
                 break;
         }
     }
+
     values = values.sort((a, b) => a - b);
     let areInStraightOrder = true;
     for (let i = 1; i < values.length; i++) {

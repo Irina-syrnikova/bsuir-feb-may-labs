@@ -6,8 +6,6 @@
  * https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions           *
  *                                                                                          *
  ********************************************************************************************/
-
-
 /**
  * Returns the regexp that matches a GUID string representation
  * '{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}',

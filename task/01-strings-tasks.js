@@ -297,7 +297,6 @@ function getCardId(value) {
     return cards[value];
 }
 
-
 module.exports = {
     concatenateStrings: concatenateStrings,
     getStringLength: getStringLength,
