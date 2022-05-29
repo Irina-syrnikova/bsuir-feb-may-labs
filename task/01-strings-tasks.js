@@ -173,7 +173,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    throw new Error('Not implemented');
+    return str.match(/[^@;]+@[^@\.;]+\.+[^@;\.]+/gi);
 }
 
 /**
@@ -200,7 +200,22 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+    let str = '';
+    for (let i = 0; i < height; i++) {
+        for (let j = 0; j < width; j++) {
+            let max_i = height - 1;
+            let max_j = width - 1;
+            if (i === 0 && j === 0) str += '┌';
+            else if (i === 0 && j === max_j) str += '┐';
+            else if (j === 0 && i === max_i) str += '└';
+            else if (i === max_i && j === max_j) str += '┘';
+            else if (i === 0 || i === max_i) str += '─';
+            else if (j === 0 || j === max_j) str += '│';
+            else str += ' ';
+        }
+        str += '\n';
+    }
+    return str;
 }
 
 
@@ -220,7 +235,7 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    return str.replace(/[a-z]/gi, letter => String.fromCharCode(letter.charCodeAt(0) + (letter.toLowerCase() <= 'm' ? 13 : -13)));
 }
 
 /**
@@ -237,7 +252,10 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+    let t= (typeof value) ;
+    let str=(value instanceof String);
+    let b= (t=== "string" || str);
+    return b;
 }
 
 
@@ -266,7 +284,17 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+    let cardA= ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+    let cardM= ['♣','♦','♥','♠'];
+    let cards=[];
+    let count=-1;
+    for (let i = 0; i < cardM.length; i++) {
+        for (let j = 0; j < cardA.length; j++) {
+            let code=cardA[j]+cardM[i];
+            cards[code]=++count;
+        }
+    }
+    return cards[value];
 }
 
 
