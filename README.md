@@ -1,3 +1,4 @@
+My lab 3 solution is [here](https://www.github.com/Irina-syrnikova/js-assignments)
 [![Brest Rolling Scopes](http://brest.rollingscopes.com/images/logo_rs_text.svg)](http://brest.rollingscopes.com/)
 #Brest Rolling Scopes School
 ## Javascript Assignments  [![Build Status](https://app.travis-ci.com/Irina-syrnikova/js-assignments.svg?branch=master)](https://app.travis-ci.com/Irina-syrnikova/js-assignments)
